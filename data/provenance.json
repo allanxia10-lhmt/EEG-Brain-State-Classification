@@ -1,0 +1,20 @@
+{
+  "source": [
+    "cache"
+  ],
+  "physionet_reachable": true,
+  "synthetic": false,
+  "n_subjects_requested": 109,
+  "manifest_entries": 3058,
+  "stats": {
+    "downloaded": 0,
+    "cached": 218,
+    "verified": 218,
+    "unverifiable": 0,
+    "mismatch": 0,
+    "failed": 0
+  },
+  "failures": [],
+  "verified": true,
+  "retrieved_utc": "2026-09-01T17:02:08+00:00"
+}

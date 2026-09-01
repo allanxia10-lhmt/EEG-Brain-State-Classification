@@ -1,0 +1,39 @@
+{
+  "title": "Diminishing returns of electrode count, epoch duration, and model complexity in EEG brain-state classification",
+  "description": "<p>A reproducible pipeline measuring the marginal value of electrode count, recording window length, and model complexity for eyes-open versus eyes-closed classification from resting-state EEG, using the PhysioNet EEG Motor Movement/Imagery Dataset (109 adults, 64 channels, 160 Hz).</p><p>All validation is participant-level. The repository includes a deliberate epoch-level baseline that quantifies the inflation caused by that common error, a 41-test suite with a permuted-label negative control, and the numerical results underlying every value reported in the accompanying manuscript.</p>",
+  "upload_type": "software",
+  "license": "MIT",
+  "access_right": "open",
+  "version": "1.0.0",
+  "creators": [
+    {
+      "name": "Xia, Allan",
+      "affiliation": "Independent researcher"
+    }
+  ],
+  "keywords": [
+    "electroencephalography",
+    "EEG",
+    "alpha rhythm",
+    "brain-state classification",
+    "machine learning",
+    "data leakage",
+    "cross-validation",
+    "reproducibility"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "10.13026/C28G6P",
+      "relation": "isDerivedFrom",
+      "resource_type": "dataset",
+      "scheme": "doi"
+    },
+    {
+      "identifier": "10.1109/TBME.2004.827072",
+      "relation": "cites",
+      "resource_type": "publication-article",
+      "scheme": "doi"
+    }
+  ],
+  "notes": "Independent research project, not affiliated with or funded by any institution. Analysis of a public dataset; no new recordings were made."
+}

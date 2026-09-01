@@ -1,0 +1,95 @@
+name: tests
+
+on:
+  push:
+    branches: [main]
+    tags: ["v*"]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  # ---------------------------------------------------------------- unit tests
+  test:
+    name: pytest (Python ${{ matrix.python-version }})
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.11", "3.12"]
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: pip
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Run test suite
+        run: pytest tests/ -q
+
+  # ------------------------------------------------- end-to-end pipeline smoke
+  # Unit tests can all pass while the pipeline is broken at the seams, so this
+  # job runs the whole thing on the synthetic fixture and then checks that the
+  # synthetic-data quarantine actually held. That guard is the only thing
+  # standing between simulated numbers and the results directory, so it is
+  # worth testing in CI rather than trusting.
+  pipeline:
+    name: end-to-end smoke run
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Run pipeline on the synthetic fixture
+        run: python run_all.py --synthetic 8 --skip-robustness
+
+      - name: Verify synthetic output was quarantined
+        run: |
+          set -e
+          test -d figures/_smoke \
+            || { echo "FAIL: synthetic figures were not redirected to _smoke"; exit 1; }
+          test -d results/_smoke \
+            || { echo "FAIL: synthetic results were not redirected to _smoke"; exit 1; }
+          if compgen -G "results/*.csv" > /dev/null; then
+            echo "FAIL: synthetic results leaked into results/ where real"
+            echo "      results live. The provenance guard is broken."
+            exit 1
+          fi
+          if compgen -G "figures/*.png" > /dev/null; then
+            echo "FAIL: synthetic figures leaked into figures/."
+            exit 1
+          fi
+          echo "OK: synthetic output stayed in _smoke/"
+
+      - name: Verify the degenerate-feature guard still fires
+        run: |
+          python - <<'PY'
+          import sys; sys.path.insert(0, ".")
+          import pandas as pd
+          from src import config as cfg
+          from src.feature_extraction import _assert_features_are_live, feature_columns
+
+          df = pd.read_csv(cfg.FEATURES_CSV)
+          for col in feature_columns(df):
+              df[col] = -12.0 if col.startswith("logabs_") else 0.0
+          try:
+              _assert_features_are_live(df)
+          except RuntimeError:
+              print("OK: zeroed feature matrix was rejected")
+          else:
+              sys.exit("FAIL: a zeroed feature matrix passed as a null result")
+          PY

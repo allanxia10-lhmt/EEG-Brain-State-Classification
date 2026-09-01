@@ -1,0 +1,2 @@
+model,accuracy,precision,recall,f1,sensitivity,specificity,tn,fp,fn,tp,n,roc_auc,mean_subject_accuracy,std_subject_accuracy,min_subject_accuracy,median_subject_accuracy,n_subjects_below_0.60,n_subjects
+logistic_regression_LOSO,0.7789270687237027,0.7966457023060797,0.7705305846569787,0.7833705548874764,0.7705305846569787,0.7879781420765027,2163,582,679,2280,5704,0.8767871290145652,0.7767071779077604,0.15956737135063834,0.24,0.8273809523809523,18,106

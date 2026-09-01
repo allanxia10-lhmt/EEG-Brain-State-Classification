@@ -1,0 +1,2 @@
+accuracy,precision,recall,f1,sensitivity,specificity,tn,fp,fn,tp,n,roc_auc,model,warning
+0.8522196261682243,0.8628571428571429,0.8502252252252253,0.8564946114577425,0.8502252252252253,0.8543689320388349,704,120,133,755,1712,0.940256549024753,logistic_regression_LEAKY_epoch_split,Epoch-level split. Inflated by design. Not a result.

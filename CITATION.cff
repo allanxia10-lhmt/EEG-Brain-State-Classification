@@ -1,0 +1,96 @@
+cff-version: 1.2.0
+message: >-
+  If you use this software or its results, please cite both the software and
+  the underlying dataset.
+title: >-
+  Diminishing returns of electrode count, epoch duration, and model complexity
+  in EEG brain-state classification
+abstract: >-
+  A reproducible pipeline measuring the marginal value of electrode count,
+  recording window length, and model complexity for eyes-open versus
+  eyes-closed classification from resting-state EEG, using the PhysioNet EEG
+  Motor Movement/Imagery Dataset. All validation is participant-level, and the
+  repository includes a deliberate epoch-level baseline that quantifies the
+  inflation caused by that common error.
+type: software
+authors:
+  - family-names: Xia
+    given-names: Allan
+    # affiliation: "Independent researcher, City, State, USA"
+    # (Affiliation is optional and free text. "Independent researcher" is a
+    #  standard, accepted value. Your high school is equally fine if you
+    #  prefer -- pick one and use it consistently across CITATION.cff,
+    #  .zenodo.json, and the manuscript.)
+    # email: "REPLACE: your email"
+    # orcid: "https://orcid.org/REPLACE"     # free at orcid.org, takes 2 minutes
+
+# REPLACE both of the following before the paper goes anywhere.
+# repository-code is the live repo; doi is the frozen Zenodo snapshot.
+repository-code: "https://github.com/REPLACE-USER/eeg-brain-state-classification"
+# doi: "10.5281/zenodo.REPLACE"
+
+version: "1.0.0"
+date-released: "2026-08-31"
+license: MIT
+
+keywords:
+  - electroencephalography
+  - alpha rhythm
+  - brain-state classification
+  - machine learning
+  - data leakage
+  - reproducibility
+
+references:
+  - type: data
+    title: "EEG Motor Movement/Imagery Database (eegmmidb), version 1.0.0"
+    doi: "10.13026/C28G6P"
+    year: 2009
+    publisher:
+      name: PhysioNet
+    license: ODC-BY-1.0
+    authors:
+      - family-names: Schalk
+        given-names: Gerwin
+      - family-names: McFarland
+        given-names: Dennis J.
+      - family-names: Hinterberger
+        given-names: Thilo
+      - family-names: Birbaumer
+        given-names: Niels
+      - family-names: Wolpaw
+        given-names: Jonathan R.
+  - type: article
+    title: >-
+      BCI2000: A General-Purpose Brain-Computer Interface (BCI) System
+    doi: "10.1109/TBME.2004.827072"
+    journal: "IEEE Transactions on Biomedical Engineering"
+    year: 2004
+    volume: 51
+    issue: 6
+    start: 1034
+    end: 1043
+    authors:
+      - family-names: Schalk
+        given-names: Gerwin
+      - family-names: McFarland
+        given-names: Dennis J.
+      - family-names: Hinterberger
+        given-names: Thilo
+      - family-names: Birbaumer
+        given-names: Niels
+      - family-names: Wolpaw
+        given-names: Jonathan R.
+  - type: article
+    title: >-
+      PhysioBank, PhysioToolkit, and PhysioNet: Components of a New Research
+      Resource for Complex Physiologic Signals
+    doi: "10.1161/01.CIR.101.23.e215"
+    journal: Circulation
+    year: 2000
+    volume: 101
+    issue: 23
+    authors:
+      - family-names: Goldberger
+        given-names: Ary L.
+      - name: "et al."

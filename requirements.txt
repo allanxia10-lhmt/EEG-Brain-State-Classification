@@ -1,0 +1,18 @@
+# Pinned to the versions this project was developed and tested against.
+# Loosen with care: MNE and scikit-learn both change defaults between minors.
+mne>=1.6,<2.0
+numpy>=1.26
+scipy>=1.11
+pandas>=2.1
+scikit-learn>=1.4
+matplotlib>=3.8
+statsmodels>=0.14
+
+# Writing EDF files, needed only for the offline synthetic fixture.
+edfio>=0.4
+
+# Testing
+pytest>=8.0
+
+# Notebooks (optional)
+jupyter>=1.0

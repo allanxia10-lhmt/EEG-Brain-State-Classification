@@ -1,0 +1,32 @@
+# ---------------------------------------------------------------- NOT committed
+# Raw EEG is ~300 MB for the baseline runs and is freely redistributable from
+# PhysioNet, so mirroring it in git would be large as well as pointless.
+data/raw/
+data/processed/*.csv
+data/checksums/SHA256SUMS.txt
+
+# Smoke-test output from synthetic runs is not results and must never be
+# published alongside the paper.
+figures/_smoke/
+results/_smoke/
+
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ipynb_checkpoints/
+.venv/
+venv/
+.DS_Store
+
+# ------------------------------------------------------------ DELIBERATELY kept
+# The following are NOT ignored, on purpose. They are what makes the repository
+# usable as a citable artifact rather than just source code:
+#
+#   results/*.csv        every number in the paper, so a reader can check the
+#                        manuscript in seconds instead of re-running for hours
+#   figures/*.png        the published figures, at the resolution they were made
+#   data/provenance.json the checksum-verification record, which is the evidence
+#                        for the data-integrity claim in the Methods section
+#
+# After a real run, commit them explicitly:
+#   git add results/*.csv figures/*.png data/provenance.json
