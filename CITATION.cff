@@ -21,13 +21,9 @@ authors:
     #  standard, accepted value. Your high school is equally fine if you
     #  prefer -- pick one and use it consistently across CITATION.cff,
     #  .zenodo.json, and the manuscript.)
-    # email: "REPLACE: your email"
-    # orcid: "https://orcid.org/REPLACE"     # free at orcid.org, takes 2 minutes
 
-# REPLACE both of the following before the paper goes anywhere.
-# repository-code is the live repo; doi is the frozen Zenodo snapshot.
 repository-code: "https://github.com/allanxia10-lhmt/EEG-Brain-State-Classification"
-# doi: "10.5281/zenodo.REPLACE"
+doi: "10.5281/zenodo.22243161"
 
 version: "1.0.0"
 date-released: "2026-08-31"
@@ -94,5 +90,6 @@ references:
       - family-names: Goldberger
         given-names: Ary L.
       - name: "et al."
+
 
 

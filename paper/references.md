@@ -85,7 +85,7 @@ Schalk, G.; McFarland, D. J.; Hinterberger, T.; Birbaumer, N.; Wolpaw, J. R. BCI
 
 ### 13. This software
 
-Xia, A. *Diminishing Returns of Electrode Count, Epoch Duration, and Model Complexity in EEG Brain-State Classification*, version 1.0.0; Zenodo, **2026**. https://doi.org/10.5281/zenodo.[REPLACE]
+Xia, A. *Diminishing Returns of Electrode Count, Epoch Duration, and Model Complexity in EEG Brain-State Classification*, version 1.0.0; Zenodo, **2026**. https://doi.org/10.5281/zenodo.22243161
 
 > The analysis pipeline reported in this manuscript, archived as a citable
 > snapshot. Cite the **version** DOI, not the concept DOI: a reader checking a
@@ -181,3 +181,4 @@ Casson, A. J. Wearable EEG and Beyond. *Biomed. Eng. Lett.* **2019**, 9 (1), 53-
 Ratti, E.; Waninger, S.; Berka, C.; Ruffini, G.; Verma, A. Comparison of Medical and Consumer Wireless EEG Systems for Use in Clinical Trials. *Front. Hum. Neurosci.* **2017**, 11, 398. https://doi.org/10.3389/fnhum.2017.00398
 
 > Benchmarks consumer against research-grade hardware. Context for the frontal-headband finding.
+
