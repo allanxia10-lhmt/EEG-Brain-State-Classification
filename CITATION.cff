@@ -26,7 +26,7 @@ authors:
 
 # REPLACE both of the following before the paper goes anywhere.
 # repository-code is the live repo; doi is the frozen Zenodo snapshot.
-repository-code: "https://github.com/allanxia10-lhmt/eeg-brain-state-classification"
+repository-code: "https://github.com/allanxia10-lhmt/EEG-Brain-State-Classification"
 # doi: "10.5281/zenodo.REPLACE"
 
 version: "1.0.0"
@@ -94,4 +94,5 @@ references:
       - family-names: Goldberger
         given-names: Ary L.
       - name: "et al."
+
 
