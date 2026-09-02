@@ -1,6 +1,6 @@
 # Diminishing returns in resting-state EEG brain-state classification
 
-[![tests](https://github.com/REPLACE-USER/eeg-brain-state-classification/actions/workflows/tests.yml/badge.svg)](https://github.com/REPLACE-USER/eeg-brain-state-classification/actions/workflows/tests.yml)
+[![tests](https://github.com/allanxia10-lhmt/eeg-brain-state-classification/actions/workflows/tests.yml/badge.svg)](https://github.com/allanxia10-lhmt/eeg-brain-state-classification/actions/workflows/tests.yml)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.REPLACE.svg)](https://doi.org/10.5281/zenodo.REPLACE)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
@@ -254,3 +254,4 @@ it, that paragraph is an assertion rather than a record.
 
 Do not commit `data/raw/` (300 MB, and freely available from PhysioNet) or
 anything under `_smoke/` (synthetic fixture output, not results).
+

@@ -161,7 +161,8 @@ def detect_bad_channels(raw) -> list[str]:
 
 # ----------------------------------------------------------------- main filter
 def preprocess_raw(raw, apply_ica: bool = False, l_freq: float | None = None,
-                   h_freq: float | None = None, average_reference: bool = True):
+                   h_freq: float | None = None, average_reference: bool = True,
+                   record_bads: list | None = None):
     """Filter, repair, and reference one recording.
 
     Band-pass 1-45 Hz, zero-phase FIR.
@@ -197,8 +198,17 @@ def preprocess_raw(raw, apply_ica: bool = False, l_freq: float | None = None,
     raw.filter(l_freq, h_freq, method="fir", fir_design=cfg.FILTER_DESIGN,
                phase=cfg.FILTER_PHASE, verbose="error")
 
-    raw.info["bads"] = detect_bad_channels(raw)
-    if raw.info["bads"]:
+    detected = detect_bad_channels(raw)
+    if record_bads is not None:
+        record_bads.extend(detected)
+    raw.info["bads"] = detected
+    if detected:
+        # reset_bads=True is deliberate: once a channel has been interpolated it
+        # must rejoin the montage, or the average reference below would exclude
+        # it and be computed over a subset. But the reset also EMPTIES
+        # info["bads"], so the detected list has to be captured first --
+        # reading info["bads"] afterwards silently reports zero bad channels
+        # however many were actually found and repaired.
         raw.interpolate_bads(reset_bads=True, verbose="error")
 
     if average_reference:
@@ -297,10 +307,12 @@ def process_recording(subject: str, run: str, *, duration: float | None = None,
     qc.sfreq = float(raw.info["sfreq"])
     qc.duration_s = float(raw.n_times / raw.info["sfreq"])
 
+    detected: list[str] = []
     raw = preprocess_raw(raw, apply_ica=apply_ica, l_freq=l_freq, h_freq=h_freq,
-                         average_reference=average_reference)
+                         average_reference=average_reference,
+                         record_bads=detected)
     qc.n_channels = len(raw.ch_names)
-    qc.bad_channels = list(raw.info.get("bads", []))
+    qc.bad_channels = detected
 
     epochs = make_epochs(raw, duration=duration)
     qc.n_epochs_total = len(epochs)
