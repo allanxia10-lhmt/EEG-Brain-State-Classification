@@ -17,6 +17,7 @@ authors:
   - family-names: Xia
     given-names: Allan
     affiliation: "Independent researcher, Prospect, Kentucky, USA"
+    email: "allanxia10@gmail.com"
 
 repository-code: "https://github.com/allanxia10-lhmt/EEG-Brain-State-Classification"
 doi: "10.5281/zenodo.22243161"
@@ -86,6 +87,7 @@ references:
       - family-names: Goldberger
         given-names: Ary L.
       - name: "et al."
+
 
 
 
