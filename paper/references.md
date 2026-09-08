@@ -90,7 +90,7 @@ Xia, A. *Diminishing Returns of Electrode Count, Epoch Duration, and Model Compl
 > The analysis pipeline reported in this manuscript, archived as a citable
 > snapshot. Cite the **version** DOI, not the concept DOI: a reader checking a
 > number needs the exact code that produced it, not whatever the default branch
-> has drifted to since. Replace the placeholder after the Zenodo release.
+> has drifted to since.
 
 ### 14. MEG and EEG Data Analysis with MNE-Python
 
@@ -181,4 +181,5 @@ Casson, A. J. Wearable EEG and Beyond. *Biomed. Eng. Lett.* **2019**, 9 (1), 53-
 Ratti, E.; Waninger, S.; Berka, C.; Ruffini, G.; Verma, A. Comparison of Medical and Consumer Wireless EEG Systems for Use in Clinical Trials. *Front. Hum. Neurosci.* **2017**, 11, 398. https://doi.org/10.3389/fnhum.2017.00398
 
 > Benchmarks consumer against research-grade hardware. Context for the frontal-headband finding.
+
 
