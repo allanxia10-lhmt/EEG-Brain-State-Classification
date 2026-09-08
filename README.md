@@ -158,7 +158,7 @@ src/robustness.py             15 preprocessing configurations
 src/visualization.py          all figures
 src/report.py                 regenerates paper tables from results/
 run_all.py                    the whole pipeline in one command
-tests/                        41 tests, including a permuted-label control
+tests/                        42 tests, including a permuted-label control
 paper/                        manuscript, references, summary, slides
 ```
 
@@ -254,6 +254,7 @@ it, that paragraph is an assertion rather than a record.
 
 Do not commit `data/raw/` (300 MB, and freely available from PhysioNet) or
 anything under `_smoke/` (synthetic fixture output, not results).
+
 
 
 
