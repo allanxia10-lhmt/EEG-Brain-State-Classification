@@ -16,11 +16,7 @@ type: software
 authors:
   - family-names: Xia
     given-names: Allan
-    # affiliation: "Independent researcher, City, State, USA"
-    # (Affiliation is optional and free text. "Independent researcher" is a
-    #  standard, accepted value. Your high school is equally fine if you
-    #  prefer -- pick one and use it consistently across CITATION.cff,
-    #  .zenodo.json, and the manuscript.)
+    affiliation: "Independent researcher, Prospect, Kentucky, USA"
 
 repository-code: "https://github.com/allanxia10-lhmt/EEG-Brain-State-Classification"
 doi: "10.5281/zenodo.22243161"
@@ -90,6 +86,7 @@ references:
       - family-names: Goldberger
         given-names: Ary L.
       - name: "et al."
+
 
 
 
